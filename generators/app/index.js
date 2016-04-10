@@ -54,6 +54,36 @@ module.exports = yeoman.Base.extend({
     );
 
     this.fs.copyTpl(
+      this.templatePath('browser/actions/index.js'),
+      this.destinationPath('browser/actions/index.js'),
+      this.props
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('browser/components/App.js'),
+      this.destinationPath('browser/components/App.js'),
+      this.props
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('browser/components/HelloWorld.js'),
+      this.destinationPath('browser/components/HelloWorld.js'),
+      this.props
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('browser/reducers/index.js'),
+      this.destinationPath('browser/reducers/index.js'),
+      this.props
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('browser/app.js'),
+      this.destinationPath('browser/app.js'),
+      this.props
+    );
+
+    this.fs.copyTpl(
       this.templatePath('server/app.babel.js'),
       this.destinationPath('server/app.babel.js'),
       this.props
