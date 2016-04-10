@@ -1,6 +1,8 @@
 # generator-koa-react [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > A yeoman generator for using react backed by koa
 
+Check out the generated boilerplate at https://github.com/doug-wade/example-koa-react.
+
 ## Installation
 
 First, install [Yeoman](http://yeoman.io) and generator-koa-react using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
