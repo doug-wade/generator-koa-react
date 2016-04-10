@@ -40,6 +40,42 @@ module.exports = yeoman.Base.extend({
       this.destinationPath('.gitignore'),
       this.props
     );
+
+    this.fs.copyTpl(
+      this.templatePath('_package.json'),
+      this.destinationPath('package.json'),
+      this.props
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('_gulpfile.babel.js'),
+      this.destinationPath('gulpfile.babel.js'),
+      this.props
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('server/app.babel.js'),
+      this.destinationPath('server/app.babel.js'),
+      this.props
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('server/logger.babel.js'),
+      this.destinationPath('server/logger.babel.js'),
+      this.props
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('styles/app.css'),
+      this.destinationPath('styles/app.css'),
+      this.props
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('views/index.html'),
+      this.destinationPath('views/index.html'),
+      this.props
+    );
   },
 
   install: function () {
