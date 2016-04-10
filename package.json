@@ -1,0 +1,57 @@
+{
+  "name": "generator-koa-react",
+  "version": "0.0.1",
+  "description": "A yeoman generator for using react backed by koa",
+  "homepage": "https://github.com/doug-wade/generator-koa-react",
+  "author": "Doug Wade <doug@dougwade.io>",
+  "files": [
+    "generators"
+  ],
+  "main": "index.js",
+  "keywords": [
+    "koa",
+    "2",
+    "react",
+    "redux",
+    "yeoman-generator",
+    "yeoman-generator"
+  ],
+  "scripts": {
+    "test": "gulp",
+    "prepublish": "gulp prepublish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doug-wade/generator-koa-react"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/doug-wade/generator-koa-react/issues"
+  },
+  "dependencies": {
+    "yeoman-generator": "^0.22.0",
+    "chalk": "^1.0.0",
+    "yosay": "^1.0.2"
+  },
+  "devDependencies": {
+    "yeoman-assert": "^2.0.0",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^2.0.0",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-mocha": "^2.0.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-nsp": "^2.1.0",
+    "gulp-coveralls": "^0.1.0",
+    "yeoman-test": "^1.0.0",
+    "eslint": "^2.1.0",
+    "eslint-config-xo-space": "^0.10.0",
+    "gulp-line-ending-corrector": "^1.0.1"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "mocha": true
+    }
+  }
+}
