@@ -29,81 +29,54 @@ module.exports = yeoman.Base.extend({
   },
 
   writing: function () {
+    var _this = this;
+    // dotfiles (replace '_' with '.')
+    [
+      '_babelrc',
+      '_gitignore'
+    ].forEach(function(filename) {
+      _this.fs.copyTpl(
+        _this.templatePath(filename),
+        _this.destinationPath(filename.replace('_', '.')),
+        _this.props
+      );
+    });
+
+    // other files I'm superstituous about (I'm worred they might interact with
+    // tools that I use) -- remove leading underscore
+    [
+      '_package.json',
+      '_gulpfile.babel.js',
+      '_README.md'
+    ].forEach(function(filename) {
+      _this.fs.copyTpl(
+        _this.templatePath(filename),
+        _this.destinationPath(filename.replace('_', '')),
+        _this.props
+      );
+    });
+
     this.fs.copyTpl(
-      this.templatePath('_babelrc'),
-      this.destinationPath('.babelrc'),
+      this.templatePath('browser/**/*.js'),
+      this.destinationPath('browser'),
       this.props
     );
 
     this.fs.copyTpl(
-      this.templatePath('_gitignore'),
-      this.destinationPath('.gitignore'),
+      this.templatePath('server/*.js'),
+      this.destinationPath('server'),
       this.props
     );
 
     this.fs.copyTpl(
-      this.templatePath('_package.json'),
-      this.destinationPath('package.json'),
+      this.templatePath('styles/*.css'),
+      this.destinationPath('styles'),
       this.props
     );
 
     this.fs.copyTpl(
-      this.templatePath('_gulpfile.babel.js'),
-      this.destinationPath('gulpfile.babel.js'),
-      this.props
-    );
-
-    this.fs.copyTpl(
-      this.templatePath('browser/actions/index.js'),
-      this.destinationPath('browser/actions/index.js'),
-      this.props
-    );
-
-    this.fs.copyTpl(
-      this.templatePath('browser/components/App.js'),
-      this.destinationPath('browser/components/App.js'),
-      this.props
-    );
-
-    this.fs.copyTpl(
-      this.templatePath('browser/components/HelloWorld.js'),
-      this.destinationPath('browser/components/HelloWorld.js'),
-      this.props
-    );
-
-    this.fs.copyTpl(
-      this.templatePath('browser/reducers/index.js'),
-      this.destinationPath('browser/reducers/index.js'),
-      this.props
-    );
-
-    this.fs.copyTpl(
-      this.templatePath('browser/app.js'),
-      this.destinationPath('browser/app.js'),
-      this.props
-    );
-
-    this.fs.copyTpl(
-      this.templatePath('server/app.babel.js'),
-      this.destinationPath('server/app.babel.js'),
-      this.props
-    );
-
-    this.fs.copyTpl(
-      this.templatePath('server/logger.babel.js'),
-      this.destinationPath('server/logger.babel.js'),
-      this.props
-    );
-
-    this.fs.copyTpl(
-      this.templatePath('styles/app.css'),
-      this.destinationPath('styles/app.css'),
-      this.props
-    );
-
-    this.fs.copyTpl(
-      this.templatePath('views/index.html'),
-      this.destinationPath('views/index.html'),
+      this.templatePath('views/*.html'),
+      this.destinationPath('views'),
       this.props
     );
   },

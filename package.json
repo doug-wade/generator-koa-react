@@ -29,8 +29,8 @@
     "url": "https://github.com/doug-wade/generator-koa-react/issues"
   },
   "dependencies": {
-    "yeoman-generator": "^0.22.0",
     "chalk": "^1.0.0",
+    "yeoman-generator": "^0.22.0",
     "yosay": "^1.0.2"
   },
   "devDependencies": {
