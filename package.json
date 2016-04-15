@@ -1,6 +1,6 @@
 {
   "name": "generator-koa-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A yeoman generator for using react backed by koa",
   "homepage": "https://github.com/doug-wade/generator-koa-react",
   "author": "Doug Wade <doug@dougwade.io>",
