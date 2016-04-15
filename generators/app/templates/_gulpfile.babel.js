@@ -1,3 +1,4 @@
+import ava from 'gulp-ava';
 import babel from 'gulp-babel';
 import babelify from 'babelify';
 import browserify from 'browserify';
@@ -40,6 +41,11 @@ gulp.task('browser', () => {
 
 gulp.task('clean', (cb) => {
   del([ paths.build, paths.public ], () => cb());
+});
+
+gulp.task('test', (cb) => {
+  gulp.src('test/*.spec.js')
+      .pipe(ava());
 });
 
 gulp.task('styles', () => {
