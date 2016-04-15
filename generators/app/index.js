@@ -1,4 +1,5 @@
 'use strict';
+
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
@@ -63,6 +64,12 @@ module.exports = yeoman.Base.extend({
     );
 
     this.fs.copyTpl(
+      this.templatePath('test/*.js'),
+      this.destinationPath('test'),
+      this.props
+    );
+
+    this.fs.copyTpl(
       this.templatePath('server/*.js'),
       this.destinationPath('server'),
       this.props
@@ -77,6 +84,12 @@ module.exports = yeoman.Base.extend({
     this.fs.copyTpl(
       this.templatePath('views/*.html'),
       this.destinationPath('views'),
+      this.props
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('db.json'),
+      this.destinationPath('db.json'),
       this.props
     );
   },

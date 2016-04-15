@@ -1,0 +1,9 @@
+{
+  "d0d24a10-3512-434f-8bd2-a0da7d83d24e": { "id": "d0d24a10-3512-434f-8bd2-a0da7d83d24e", "name": "ava", "link": "https://github.com/sindresorhus/gulp-ava", "done": false },
+  "f2877dce-428e-4fd4-b3dd-9baee4326167": { "id": "f2877dce-428e-4fd4-b3dd-9baee4326167", "name": "babel", "link": "https://babeljs.io/", "done": false },
+  "e68eeb0f-9396-437f-aaed-166a71375a62": { "id": "e68eeb0f-9396-437f-aaed-166a71375a62", "name": "browserify", "link": "http://browserify.org/", "done": false },
+  "41e34733-3148-46ff-8af3-26efc017a6bd": { "id": "41e34733-3148-46ff-8af3-26efc017a6bd", "name": "gulp", "link": "https://gulpjs.com", "done": false },
+  "3a4d4c98-2bd8-49fe-a499-3d6bf3ead111": { "id": "3a4d4c98-2bd8-49fe-a499-3d6bf3ead111", "name": "koa", "link": "https://koajs.com", "done": false },
+  "a4d442db-f71d-4a0c-812a-b485605fff71": { "id": "a4d442db-f71d-4a0c-812a-b485605fff71", "name": "react", "link": "https://facebook.github.io/react/", "done": false },
+  "333f504c-701b-46f8-adbe-b8234ec4de92": { "id": "333f504c-701b-46f8-adbe-b8234ec4de92", "name": "redux", "link": "https://redux.js.org", "done": false }
+}
