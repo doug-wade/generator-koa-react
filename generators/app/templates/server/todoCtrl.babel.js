@@ -55,10 +55,10 @@ function get(ctx, next) {
   logger.info(`getting todo by ${id}`);
   const todo = db.getTodo(id);
   if (!todo) {
-    logger.warn(`Could not find todo with id ${id}`)
+    logger.warn(`Could not find todo with id ${id}`);
     ctx.body = {};
   } else {
-    logger.info(`Got todo ${JSON.stringify(todo)}`)
+    logger.info(`Got todo ${JSON.stringify(todo)}`);
     ctx.body = todo;
   }
   return next();

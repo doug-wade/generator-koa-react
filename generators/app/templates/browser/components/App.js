@@ -1,13 +1,39 @@
-import React from 'react'
-import HelloWorld from './HelloWorld'
-import { connect } from 'react-redux'
+import React from 'react';
+import AddTodo from './AddTodo';
+import HelloWorld from './HelloWorld';
+import Todo from './Todo';
+import { connect } from 'react-redux';
 
-let App = () => (
-  <div className="wrapper">
-    <HelloWorld />
-  </div>
-)
+const mapStateToProps = (state) => {
+  return {
+    todos: [].concat(state.todos)
+  };
+};
 
-App = connect()(App);
+let App = ({ todos }) => {
+  const todolist = [];
 
-export default App
+  todos.forEach((todo) => {
+    todolist.push(<Todo todo={todo} />);
+  });
+
+  return (
+    <div className="wrapper">
+      <HelloWorld />
+      <h2>Todos</h2>
+      {todolist}
+      <AddTodo />
+    </div>
+  );
+};
+
+App.propTypes = {
+  todos: React.PropTypes.arrayOf(React.PropTypes.shape({
+    name: React.PropTypes.string,
+    link: React.PropTypes.string
+  }))
+};
+
+App = connect(mapStateToProps)(App);
+
+export default App;

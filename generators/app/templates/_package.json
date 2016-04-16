@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "main": "build/app.js",
   "scripts": {
-    "start": "gulp clean && gulp build && node build/app.js | bunyan -o short",
-    "test": "gulp build && ava test/*.js"
+    "start": "gulp clean && gulp build && node build/app.js | bunyan",
+    "test": "nyc ava test/*",
+    "lint": "eslint .",
+    "prepublish": "snyk test"
   },
   "keywords": [
     "koa",
@@ -12,7 +14,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "ava": "0.14.0",
+    "ava": "^0.14.0",
     "babel-core": "^6.7.4",
     "babel-plugin-syntax-async-functions": "^6.5.0",
     "babel-plugin-transform-regenerator": "^6.6.5",
@@ -33,7 +35,11 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
+    "nyc": "^6.4.0",
     "reactify": "^1.1.1",
+    "snyk": "^1.14.0",
+    "supertest": "1.2.0",
+    "supertest-as-promised": "^3.1.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
@@ -52,7 +58,6 @@
     "react-dom": "^15.0.0",
     "react-redux": "^4.4.1",
     "redux": "^3.3.1",
-    "supertest-as-promised": "^3.1.0",
     "uuid": "2.0.2"
   }
 }

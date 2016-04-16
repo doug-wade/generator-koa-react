@@ -5,7 +5,6 @@ const router = krouter();
 
 import 'babel-polyfill';
 import bodyParser from 'koa-bodyparser';
-import request from 'request';
 import krouter from 'koa-router';
 import serve from 'koa-static';
 import bunyan from 'koa-bunyan';
