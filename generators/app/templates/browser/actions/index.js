@@ -1,3 +1,3 @@
 export const getExcited = () => {
-  return { type: 'GET_EXCITED' }
-}
+  return { type: 'GET_EXCITED' };
+};

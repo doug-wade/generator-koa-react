@@ -5,8 +5,8 @@ import { getExcited } from '../actions';
 const mapStateToProps = (state) => {
   return {
     excitement: state.excitement
-  }
-}
+  };
+};
 
 let HelloWorld = ({ excitement, dispatch }) => {
   return (
@@ -15,12 +15,12 @@ let HelloWorld = ({ excitement, dispatch }) => {
       <button onClick={ () => dispatch(getExcited()) }>Get More Excited!</button>
     </div>
   );
-}
+};
 
 HelloWorld.propTypes = {
   excitement: React.PropTypes.number.isRequired,
   dispatch: React.PropTypes.func.isRequired
-}
+};
 
 HelloWorld = connect(mapStateToProps)(HelloWorld);
 

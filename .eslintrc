@@ -1,9 +1,19 @@
 {
-  "extends": "eslint:recommended",
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
   "env": {
+    "browser": true,
     "node": true,
-    "mocha": true
+    "mocha": true,
+    "es6": true
   },
+  "parser": "babel-eslint",
+  "ecmaFeatures": {
+    "jsx": true
+  },
+  "sourceType": "module",
+  "plugins": [
+    "react"
+  ],
   "rules": {
     "array-bracket-spacing": [
       2,
@@ -40,10 +50,7 @@
       2,
       "single"
     ],
-    "space-after-keywords": [
-      2,
-      "always"
-    ],
+    "keyword-spacing": ["error", {"before": true, "after": true, "overrides": {}}],
     "space-before-function-paren": [
       2,
       {
@@ -83,7 +90,6 @@
     "eqeqeq": 2,
     "no-alert": 2,
     "no-caller": 2,
-    "no-empty-label": 2,
     "no-extend-native": 2,
     "no-extra-bind": 2,
     "no-implied-eval": 2,
@@ -113,7 +119,7 @@
     "new-cap": 2,
     "new-parens": 2,
     "no-array-constructor": 2,
-    "no-extra-parens": 2,
+    "no-extra-parens": 0,
     "no-new-object": 2,
     "no-spaced-func": 2,
     "no-trailing-spaces": 2,
@@ -125,7 +131,6 @@
         "before": false,
         "after": true
       }
-    ],
-    "space-return-throw-case": 2
+    ]
   }
 }

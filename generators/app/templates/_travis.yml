@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - v5
+  - v4
+  - '0.12'
+  - '0.10'
+
+install:
+  - npm install
+
+script:
+  - gulp
+  - npm test
+
+after_success:
+    - './node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls'

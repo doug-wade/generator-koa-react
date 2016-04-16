@@ -18,7 +18,7 @@ const paths = {
   server: 'server/*.js',
   styles: 'styles/*.css',
   views: 'views/*.html'
-}
+};
 
 gulp.task('browser', () => {
   // set up the browserify instance on a task basis
@@ -39,7 +39,7 @@ gulp.task('browser', () => {
 });
 
 gulp.task('clean', (cb) => {
-  del([ paths.build, paths.public ], () => cb());
+  del([paths.build, paths.public], () => cb());
 });
 
 gulp.task('styles', () => {
@@ -52,14 +52,14 @@ gulp.task('scripts', () => {
   gulp.src(paths.server)
       .pipe(babel())
       .pipe(rename((path) => {
-        path.basename = path.basename.split('.')[0]
+        path.basename = path.basename.split('.')[0];
       }))
-      .pipe(gulp.dest(paths.build))
+      .pipe(gulp.dest(paths.build));
 });
 
 gulp.task('views', () => {
   gulp.src(paths.views)
-      .pipe(gulp.dest(paths.public))
+      .pipe(gulp.dest(paths.public));
 });
 
 gulp.task('build', ['scripts', 'styles', 'views', 'browser']);

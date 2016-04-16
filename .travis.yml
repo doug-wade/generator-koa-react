@@ -1,6 +1,21 @@
 language: node_js
 node_js:
-  - v5
-  - v4
+  - '5'
+  - '4'
   - '0.12'
-  - '0.10'
+
+install:
+  - npm install
+
+script:
+  - eslint .
+  - gulp
+
+deploy:
+  provider: npm
+  email: "doug@dougwade.io"
+  api_key: "M7FWHGbOb1PNArwQmPU23mld8HAgZ4WoYTxFPzVd4adz2X6ZXbNzaEOhgqcZ9iIcHjEk4fCK9IyiGyNsWIwo+927JH2R/f7tQ3wmnIlvnFWfmFKpwa8gG6//LwsiGwZLENK6wx2fC6949rbp+8lg1BT6yMiqcaXk8+x0avSyNus="
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: doug-wade/generator-koa-react
