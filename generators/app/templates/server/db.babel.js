@@ -37,7 +37,7 @@ export default {
     write();
     return db[todo.id];
   }
-}
+};
 
 function write() {
   fs.writeFileSync(dbLoc, JSON.stringify(db));
