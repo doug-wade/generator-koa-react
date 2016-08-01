@@ -44,7 +44,7 @@
     "gulp-nsp": "^2.1.0",
     "gulp-coveralls": "^0.1.0",
     "yeoman-test": "^1.0.0",
-    "eslint": "^2.1.0",
+    "eslint": "^3.2.1",
     "eslint-config-xo-space": "^0.10.0",
     "gulp-line-ending-corrector": "^1.0.1"
   },
