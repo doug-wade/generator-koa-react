@@ -12,7 +12,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "ava": "0.14.0",
+    "ava": "^0.16.0",
     "babel-core": "^6.7.4",
     "babel-plugin-syntax-async-functions": "^6.5.0",
     "babel-plugin-transform-regenerator": "^6.6.5",

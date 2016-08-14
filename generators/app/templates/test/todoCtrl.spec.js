@@ -39,7 +39,7 @@ test('todo:Get', async t => {
 });
 
 test('todo:Post', async t => {
-    t.plan(2);
+    t.plan(3);
 
     const fixture = { name: 'drink beer', link: 'http://www.fremontbrewing.com/', done: false };
     const postRes = await request(app)
@@ -49,13 +49,11 @@ test('todo:Post', async t => {
     const todo = postRes.body;
 
     const res = await request(app)
-        .get('/todo')
-        .send({ id: todo.id });
+        .get('/todo/' + todo.id)
+        .send();
 
     t.is(postRes.status, 200, 'the post gets a 200 response');
     t.is(res.status, 200, 'the get gets a 200 response');
 
-    t.is(todo.name, fixture.name, 'has the same name');
-    t.is(todo.link, fixture.link, 'has the same link');
-    t.is(todo.done, fixture.done, 'has the same done');
+    t.is(res.body.id, todo.id, 'has the same id');
 });
