@@ -30,16 +30,16 @@ module.exports = yeoman.Base.extend({
   },
 
   writing: function () {
-    var _this = this;
+    var that = this;
     // dotfiles (replace '_' with '.')
     [
       '_babelrc',
       '_gitignore'
-    ].forEach(function(filename) {
-      _this.fs.copyTpl(
-        _this.templatePath(filename),
-        _this.destinationPath(filename.replace('_', '.')),
-        _this.props
+    ].forEach(function (filename) {
+      that.fs.copyTpl(
+        that.templatePath(filename),
+        that.destinationPath(filename.replace('_', '.')),
+        that.props
       );
     });
 
@@ -49,11 +49,11 @@ module.exports = yeoman.Base.extend({
       '_package.json',
       '_gulpfile.babel.js',
       '_README.md'
-    ].forEach(function(filename) {
-      _this.fs.copyTpl(
-        _this.templatePath(filename),
-        _this.destinationPath(filename.replace('_', '')),
-        _this.props
+    ].forEach(function (filename) {
+      that.fs.copyTpl(
+        that.templatePath(filename),
+        that.destinationPath(filename.replace('_', '')),
+        that.props
       );
     });
 
