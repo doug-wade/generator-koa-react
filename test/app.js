@@ -12,7 +12,12 @@ describe('generator-koa-react:app', function () {
 
   it('creates files', function () {
     assert.file([
-      'dummyfile.txt'
+      '.babelrc',
+      '.gitignore',
+      'gulpfile.babel.js',
+      'package.json',
+      'README.md',
+      'db.json'
     ]);
   });
 });
