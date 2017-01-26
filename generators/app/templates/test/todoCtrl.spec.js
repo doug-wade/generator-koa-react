@@ -1,5 +1,5 @@
 import test from 'ava';
-import request from 'supertest-as-promised';
+import request from 'supertest';
 import app from '../build/app';
 
 test('todo:GetAll', async t => {
