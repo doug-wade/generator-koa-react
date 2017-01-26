@@ -2,6 +2,7 @@ import Koa from 'koa';
 
 const app = new Koa();
 const router = krouter();
+const PORT = 3000;
 
 import 'babel-polyfill';
 import bodyParser from 'koa-bodyparser';
@@ -25,4 +26,6 @@ app
   .use(router.routes())
   .use(router.allowedMethods());
 
-export default app.listen(3000);
+export default app.listen(PORT, () => {
+  logger.info(`Listening on port ${PORT}`);
+});
