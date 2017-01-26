@@ -82,7 +82,7 @@ module.exports = yeoman.Base.extend({
     );
 
     this.fs.copyTpl(
-      this.templatePath('views/*.html'),
+      this.templatePath('views/*.pug'),
       this.destinationPath('views'),
       this.props
     );

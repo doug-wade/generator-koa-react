@@ -12,6 +12,16 @@ import serve from 'koa-static';
 import bunyan from 'koa-bunyan';
 import logger from './logger';
 import todoCtrl from './todoCtrl';
+import indexCtrl from './indexCtrl';
+import Pug from 'koa-pug';
+
+const pug = new Pug({
+  viewPath: './views',
+  debug: false,
+  pretty: false,
+  compileDebug: false,
+  app: app // equals to pug.use(app) and app.use(pug.middleware)
+});
 
 app.use(bunyan(logger, {
   level: 'info',
@@ -20,6 +30,7 @@ app.use(bunyan(logger, {
 app.use(bodyParser());
 
 todoCtrl(router);
+indexCtrl(router);
 
 app.use(serve('public/'));
 app
