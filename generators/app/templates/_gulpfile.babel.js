@@ -18,7 +18,7 @@ const paths = {
   public: 'public',
   server: 'server/*.js',
   styles: 'styles/*.css',
-  views: 'views/*.html'
+  views: 'views/'
 }
 
 gulp.task('browser', () => {
