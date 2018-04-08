@@ -1,0 +1,12 @@
+doctype html
+html(lang="en")
+  head
+    title <%= name %>
+    link(rel="stylesheet" href="app.css" title="app-styles")
+    script(type="text/javascript").
+      window.initialData = #{initialData};
+
+  body
+    h1 <%= name %>
+    div(id="application-root")
+    script(src="app.js")

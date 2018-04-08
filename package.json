@@ -1,6 +1,6 @@
 {
   "name": "generator-koa-react",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A yeoman generator for using react backed by koa",
   "homepage": "https://github.com/doug-wade/generator-koa-react",
   "author": "Doug Wade <doug@dougwade.io>",
@@ -17,8 +17,7 @@
     "yeoman-generator"
   ],
   "scripts": {
-    "test": "gulp",
-    "prepublish": "gulp prepublish"
+    "test": "gulp"
   },
   "repository": {
     "type": "git",
@@ -38,14 +37,13 @@
     "gulp": "^3.9.0",
     "gulp-eslint": "^3.0.1",
     "gulp-exclude-gitignore": "^1.0.0",
-    "gulp-istanbul": "^1.0.0",
+    "gulp-istanbul": "^1.1.0",
     "gulp-mocha": "^3.0.1",
     "gulp-plumber": "^1.0.0",
-    "gulp-nsp": "^2.1.0",
     "gulp-coveralls": "^0.1.0",
     "yeoman-test": "^1.0.0",
     "eslint": "^3.3.0",
-    "eslint-config-xo-space": "^0.14.0",
+    "eslint-config-xo-space": "^0.15.0",
     "gulp-line-ending-corrector": "^1.0.1"
   },
   "eslintConfig": {
