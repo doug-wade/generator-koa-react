@@ -1,59 +1,53 @@
 'use strict';
+const path = require('path');
+const Generator = require('yeoman-generator');
+const chalk = require('chalk');
+const yosay = require('yosay');
 
-var yeoman = require('yeoman-generator');
-var chalk = require('chalk');
-var yosay = require('yosay');
+module.exports = class KoaReactGenerator extends Generator {
 
-module.exports = yeoman.Base.extend({
+  prompting() {
+    const done = this.async();
 
-  prompting: function () {
-    var done = this.async();
-
-    // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the delightful ' + chalk.red('generator-koa-react') + ' generator!'
+      `Welcome to the delightful ${chalk.red('generator-koa-react')} generator!`
     ));
 
-    var prompts = [{
+    const prompts = [{
       type: 'input',
       name: 'name',
       message: 'What would you like to call your app?',
       default: 'koa-react'
     }];
 
-    this.prompt(prompts, function (props) {
+    this.prompt(prompts, (props) => {
       this.props = props;
-      // To access props later use this.props.someAnswer;
-
       done();
-    }.bind(this));
-  },
+    });
+  }
 
-  writing: function () {
-    var that = this;
+  writing() {
     // dotfiles (replace '_' with '.')
     [
       '_babelrc',
       '_gitignore'
-    ].forEach(function (filename) {
-      that.fs.copyTpl(
-        that.templatePath(filename),
-        that.destinationPath(filename.replace('_', '.')),
-        that.props
+    ].forEach((filename) => {
+      this.fs.copyTpl(
+        this.templatePath(filename),
+        this.destinationPath(filename.replace('_', '.')),
+        this.props
       );
     });
 
-    // other files I'm superstituous about (I'm worred they might interact with
-    // tools that I use) -- remove leading underscore
     [
       '_package.json',
       '_gulpfile.babel.js',
       '_README.md'
-    ].forEach(function (filename) {
-      that.fs.copyTpl(
-        that.templatePath(filename),
-        that.destinationPath(filename.replace('_', '')),
-        that.props
+    ].forEach((filename) => {
+      this.fs.copyTpl(
+        this.templatePath(filename),
+        this.destinationPath(filename.replace('_', '')),
+        this.props
       );
     });
 
@@ -92,9 +86,9 @@ module.exports = yeoman.Base.extend({
       this.destinationPath('db.json'),
       this.props
     );
-  },
+  }
 
-  install: function () {
+  install() {
     this.npmInstall();
   }
-});
+}
