@@ -42,7 +42,7 @@
     "gulp-plumber": "^1.0.0",
     "gulp-coveralls": "^0.1.0",
     "yeoman-test": "^1.0.0",
-    "eslint": "^3.3.0",
+    "eslint": "^6.6.0",
     "eslint-config-xo-space": "^0.15.0",
     "gulp-line-ending-corrector": "^1.0.1"
   },
